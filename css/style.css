@@ -503,8 +503,8 @@ section { padding: 100px 0; }
   width: 14px; height: 14px; border-radius: 50%;
   background: var(--color-accent); border: 3px solid var(--color-bg);
 }
-.timeline-item h4 { font-size: 1.05rem; color: var(--color-primary); margin-bottom: 4px; }
-.timeline-item p { font-size: .88rem; color: var(--color-text-light); }
+.timeline-item h4 { font-size: 1.05rem; color: #fff; margin-bottom: 4px; }
+.timeline-item p { font-size: .88rem; color: rgba(255,255,255,.85); }
 
 /* Animations */
 @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
