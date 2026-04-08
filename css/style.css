@@ -152,7 +152,7 @@ section { padding: 100px 0; }
 .problem { background: var(--color-bg-alt); }
 .problem-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
-  gap: 28px;
+  gap: 28px; max-width: 100%;
 }
 .problem-card {
   background: var(--color-white); border-radius: var(--radius); padding: 36px;
