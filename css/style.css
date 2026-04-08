@@ -151,7 +151,7 @@ section { padding: 100px 0; }
 /* ---- PROBLEM SECTION ---- */
 .problem { background: var(--color-bg-alt); }
 .problem-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: grid; grid-template-columns: repeat(2, 1fr);
   gap: 28px;
 }
 .problem-card {
@@ -390,6 +390,7 @@ section { padding: 100px 0; }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1.2rem; }
   .hamburger { display: block; }
+  .problem-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-content { padding: 36px 0 48px; }
   .hero h1 { font-size: 1.7rem; margin-bottom: 14px; }
