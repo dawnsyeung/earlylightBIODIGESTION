@@ -58,8 +58,8 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
 }
 .site-nav .logo {
   display: flex; align-items: center;
-  font-family: var(--font-heading); color: var(--color-white);
-  font-size: 1.15rem; font-weight: 700; letter-spacing: .5px;
+  font-family: 'Cormorant Garamond', Georgia, serif; color: var(--color-white);
+  font-size: 1.55rem; font-weight: 400; letter-spacing: 3.5px;
   font-variant: small-caps; text-transform: lowercase;
 }
 .footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
