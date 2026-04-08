@@ -391,6 +391,7 @@ section { padding: 100px 0; }
   .nav-links a { font-size: 1.2rem; }
   .hamburger { display: block; }
   .problem-grid { grid-template-columns: 1fr; }
+  .flybox-feature-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-content { padding: 36px 0 48px; }
   .hero h1 { font-size: 1.7rem; margin-bottom: 14px; }
@@ -449,7 +450,7 @@ section { padding: 100px 0; }
 
 .flybox-section { background: var(--color-bg-alt); }
 .flybox-feature-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 .flybox-feature {
