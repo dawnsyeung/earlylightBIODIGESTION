@@ -1,8 +1,8 @@
-# earlylight.bio
+# Early Light Biodigestion
 
 **Modular biodigestion systems that turn organic waste into premium byproducts.**
 
-Earlylight deploys Flybox.bio's Insect Waste Management™ technology to convert organic waste on-site — cheaper, greener, and 20× faster than composting.
+Early Light deploys Flybox.bio's Insect Waste Management™ technology to convert organic waste on-site — cheaper, greener, and 20× faster than composting.
 
 ## Structure
 
