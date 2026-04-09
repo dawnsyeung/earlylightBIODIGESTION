@@ -94,7 +94,7 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
   display: flex; align-items: center;
   background:
     linear-gradient(160deg, rgba(17,26,20,.82) 0%, rgba(26,60,42,.65) 50%, rgba(45,94,63,.5) 100%),
-    url('https://images.unsplash.com/photo-1501004318855-e3e4d0a03db1?w=1920&q=80') center/cover no-repeat;
+    url('https://images.unsplash.com/photo-1563514227147-6d2ff665a6a0?w=1920&q=80') center/cover no-repeat;
   color: var(--color-white);
   padding-top: 72px;
 }
