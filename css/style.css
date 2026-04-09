@@ -93,8 +93,8 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
   min-height: 100vh;
   display: flex; align-items: center;
   background:
-    linear-gradient(160deg, rgba(17,26,20,.88) 0%, rgba(26,60,42,.72) 50%, rgba(109,181,109,.18) 100%),
-    url('https://images.unsplash.com/photo-1518173946687-a37e46f5be84?w=1920&q=80') center/cover no-repeat;
+    linear-gradient(160deg, rgba(17,26,20,.82) 0%, rgba(26,60,42,.65) 50%, rgba(45,94,63,.5) 100%),
+    url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=1920&q=80') center/cover no-repeat;
   color: var(--color-white);
   padding-top: 72px;
 }
