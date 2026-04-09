@@ -61,6 +61,7 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
   font-family: 'Cormorant Garamond', Georgia, serif; color: var(--color-white);
   font-size: 1.55rem; font-weight: 400; letter-spacing: 3.5px;
   font-variant: small-caps; text-transform: lowercase;
+  line-height: 1.1; white-space: nowrap;
 }
 .footer-logo { height: 50px; width: auto; }
 .nav-links { display: flex; gap: 28px; }
@@ -390,6 +391,8 @@ section { padding: 100px 0; }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1.2rem; }
   .hamburger { display: block; }
+  .site-nav .logo { font-size: 1.1rem; letter-spacing: 2px; }
+  .site-nav .container { height: 60px; }
   .problem-grid { grid-template-columns: 1fr; }
   .flybox-feature-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
