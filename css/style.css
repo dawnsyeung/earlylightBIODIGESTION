@@ -62,7 +62,7 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
   font-size: 1.55rem; font-weight: 400; letter-spacing: 3.5px;
   font-variant: small-caps; text-transform: lowercase;
 }
-.footer-logo { height: 40px; width: auto; filter: brightness(0) invert(1); }
+.footer-logo { height: 50px; width: auto; }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a {
   color: rgba(255,255,255,.8); font-size: .9rem; font-weight: 500;
