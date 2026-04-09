@@ -150,6 +150,25 @@ section { padding: 100px 0; }
 }
 
 /* ---- PROBLEM SECTION ---- */
+/* ---- PROCESS STEPS ---- */
+.process-steps {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px;
+}
+.process-step {
+  display: flex; gap: 16px; padding: 28px;
+  background: var(--color-white); border-radius: var(--radius);
+  box-shadow: var(--shadow-sm); transition: all var(--transition);
+}
+.process-step:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+.step-number {
+  width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+  background: var(--color-primary); color: var(--color-white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700;
+}
+.process-step h4 { font-size: 1.05rem; color: var(--color-primary); margin-bottom: 6px; }
+.process-step p { font-size: .88rem; color: var(--color-text-light); }
+
 .problem { background: var(--color-bg-alt); }
 .problem-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
@@ -394,6 +413,7 @@ section { padding: 100px 0; }
   .site-nav .logo { font-size: 1.1rem; letter-spacing: 2px; }
   .site-nav .container { height: 60px; }
   .problem-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
   .flybox-feature-grid { grid-template-columns: 1fr; }
   .hero { min-height: auto; }
   .hero-content { padding: 36px 0 48px; }
