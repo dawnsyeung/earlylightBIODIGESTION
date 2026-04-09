@@ -94,7 +94,7 @@ h1,h2,h3,h4 { font-family: var(--font-heading); font-weight: 700; line-height: 1
   display: flex; align-items: center;
   background:
     linear-gradient(160deg, rgba(17,26,20,.82) 0%, rgba(26,60,42,.65) 50%, rgba(45,94,63,.5) 100%),
-    url('cityfarm.png') center/cover no-repeat;
+    url('../cityfarm.png') center/cover no-repeat;
   color: var(--color-white);
   padding-top: 72px;
 }
