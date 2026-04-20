@@ -293,6 +293,67 @@ section { padding: 100px 0; }
 }
 .brand-card a.visit-link:hover { color: var(--color-primary); }
 
+/* ---- MARKET LINKS ---- */
+.market-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.market-link-card {
+  background: var(--color-white);
+  border-radius: var(--radius);
+  border: 1px solid #e3e1d7;
+  border-left: 4px solid var(--color-accent);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+.market-link-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--color-accent);
+}
+.market-link-card h3 {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+.market-link-card p {
+  font-size: .9rem;
+  color: var(--color-text-light);
+  margin-bottom: 12px;
+}
+.market-link-card span {
+  font-size: .85rem;
+  font-weight: 700;
+  letter-spacing: .3px;
+  color: var(--color-accent);
+}
+
+/* ---- MARKET PAGE CONTENT ---- */
+.market-bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.market-bullet-list li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--color-text-light);
+  font-size: .9rem;
+}
+.market-bullet-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: .72em;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  transform: translateY(-50%);
+}
+
 /* ---- ENGAGEMENT MODELS ---- */
 .models-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
