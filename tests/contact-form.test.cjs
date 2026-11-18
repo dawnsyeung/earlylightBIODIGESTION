@@ -1,0 +1,13 @@
+const {test}=require('node:test');const assert=require('node:assert/strict');const vm=require('node:vm');const fs=require('node:fs');
+const source=fs.readFileSync('assets/contact-form.js','utf8');
+function setup() {
+ const calls=[],events=[],button={disabled:false},status={setAttribute(){},textContent:''},modals={contactModal:{style:{display:'flex'}},thankYouModal:{style:{display:'none'}}};let handler,resolve,reject,resets=0;
+ const form={action:'https://formspree.io/f/test',querySelector:()=>button,appendChild(){},addEventListener:(name,h)=>{handler=h},reset:()=>resets++};
+ const ctx={document:{getElementById:id=>id==='contactForm'?form:modals[id],createElement:()=>status,dispatchEvent:e=>events.push(e)},FormData:class{constructor(f){assert.equal(f,form)}},Event:class{constructor(type){this.type=type}},fetch:(url,options)=>{calls.push({url,options});return new Promise((r,j)=>{resolve=r;reject=j})}};
+ vm.runInNewContext(source,ctx);return {submit:()=>handler({preventDefault(){}}),calls,events,button,status,modals,resolve:r=>resolve(r),reject:()=>reject(new Error('network')),resets:()=>resets};
+}
+const flush=()=>new Promise(r=>setImmediate(r));
+test('success: only accepted submission signals lead; duplicate pending click ignored',async()=>{const x=setup();x.submit();x.submit();assert.equal(x.calls.length,1);assert.equal(x.events.length,0);assert.equal(x.button.disabled,true);x.resolve({ok:true});await flush();assert.equal(x.events.length,1);assert.equal(x.events[0].type,'earlylight:lead-submitted');assert.equal(Object.keys(x.events[0]).length,1);assert.equal(x.resets(),1);assert.equal(x.modals.thankYouModal.style.display,'flex');assert.equal(x.button.disabled,false)});
+test('rejection: no success event, input remains, retry enabled',async()=>{const x=setup();x.submit();x.resolve({ok:false});await flush();assert.equal(x.events.length,0);assert.equal(x.resets(),0);assert.equal(x.button.disabled,false);assert.match(x.status.textContent,/could not be sent/);x.submit();assert.equal(x.calls.length,2)});
+test('network failure is not a lead',async()=>{const x=setup();x.submit();x.reject();await flush();assert.equal(x.events.length,0);assert.equal(x.resets(),0);assert.equal(x.button.disabled,false)});
+test('page wiring excludes partner portal and removes duplicate handler',()=>{const home=fs.readFileSync('index.html','utf8');assert.equal(home.split('/assets/contact-form.js').length,2);assert.equal(home.includes("// Contact form submission via Formspree with AJAX"),false);assert.equal(fs.readFileSync('partners/houston-hospitality.html','utf8').includes('/assets/contact-form.js'),false)});

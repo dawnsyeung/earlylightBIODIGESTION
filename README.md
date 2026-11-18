@@ -40,11 +40,17 @@ analytics stays off, with a configuration warning.
 Only the five public earlylight.bio pages are instrumented. The partner portal,
 preview hosts, Global Privacy Control and Do Not Track requests are excluded.
 No replay, autocapture, person profiles, persistent browser storage, form text,
-email values or query strings are captured. Mail links record an intent click,
-not a submitted lead. Outbound clicks record only the destination hostname.
+email values, campaign parameters or query strings are captured. Referrers retain
+only the origin. Mail links record an intent click, not a submitted lead. Outbound
+clicks record only the destination hostname. The public contact form emits
+`lead_submitted` only after Formspree accepts the submission; failures and
+in-flight repeated clicks do not count. No form field values enter analytics.
+This is a lead-generation website, not an online checkout: there is deliberately
+no `Purchase` event or invented order revenue. Purchases belong on the actual
+store/order-confirmation integration, not a marketing link click.
 These conservative storage settings limit cross-page visitor/session metrics.
 
-Checks: `node --check assets/analytics.js`, `node --test tests/analytics.test.cjs`,
+Checks: `node --check assets/analytics.js`, `node --check assets/contact-form.js`, `node --test tests/*.test.cjs`,
 and `node scripts/build.mjs`. To test an injected build locally, supply test
 values for both variables. After deployment, verify actual events in PostHog;
 a passing unit test does not prove production ingestion. A reverse proxy can

@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="css/style.css">
   <script defer src="/assets/analytics-config.js"></script>
   <script defer src="/assets/analytics.js"></script>
+  <script defer src="/assets/contact-form.js"></script>
 </head>
 <body>
 
@@ -638,24 +639,6 @@
 </div>
 
 <script>
-// Contact form submission via Formspree with AJAX
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var form = this;
-  var data = new FormData(form);
-  fetch(form.action, {
-    method: 'POST',
-    body: data,
-    headers: { 'Accept': 'application/json' }
-  }).then(function(response) {
-    if (response.ok) {
-      document.getElementById('contactModal').style.display = 'none';
-      document.getElementById('thankYouModal').style.display = 'flex';
-      form.reset();
-    }
-  });
-});
-
 // Mobile nav
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
